@@ -424,6 +424,9 @@ html {
   display: table-row;
   height: 100%; }
 
+.success {
+  text-align: center; }
+
 button:hover, button:focus, a:hover, a:focus {
   outline: none; }
 
