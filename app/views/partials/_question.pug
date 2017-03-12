@@ -1,0 +1,27 @@
+section.question
+  .container.question__container
+    .row
+      .col-xs-12.col-sm-8
+        h2.heading.heading--inverse Остались вопросы
+    .row
+      .col-xs-12.col-md-8
+        form.contactForm.form.form--question(name='Форма №2', method='post', action='./mail/mail.php', novalidate)
+          .row
+            .col-xs-12
+              .form__heading.
+                Напишите вопрос и телефон и мы ответим Вам в течении 20ти минут!
+          .row
+            .col-xs-12.col-sm-6
+              .form-group
+                input.form-control.form__input.form__input--message(name='message', type='text', placeholder='Введите ваш вопрос', data-validation-required-message='Введите корректные данные.', required)
+                p.help-block.text-danger
+            .col-xs-12.col-sm-6
+              .form-group
+                input.form-control.form__input.form__input--phone(name='phone', type='tel', data-validation-required-message='Введите корректные данные.', placeholder='Введите ваш телефон', required)
+                p.help-block.text-danger
+            .clearfix
+            .col-xs-12
+              .success
+            .col-sm-6.col-sm-offset-3.text-center
+              button.btn.btn--form(type='submit', data-loading-text="Файл отправляется...") Узнать цену
+      i.ic.ic--car-red

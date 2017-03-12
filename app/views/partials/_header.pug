@@ -1,0 +1,57 @@
+header#header.header
+  .container
+    .row
+      .col-xs-12
+        h1.heading.heading--main
+          | Низкие цены на Автозапчасти
+        div.sub-heading.header__sub-heading
+          | Бесплатная доставка по Крыму! 
+          span.sub-heading.sub-heading--br Оплата наложенным платежом, при получении
+    .row
+      .col-xs-12.col-sm-4
+        .header__item
+          .header__text
+            | 5 лет
+          .header__descr
+            | На рынке запчастей
+      .col-xs-12.col-sm-4
+        .header__item
+          .header__text
+            | 70&nbsp;000
+          .header__descr
+            | Позиций в крыму
+      .col-xs-12.col-sm-4
+        .header__item
+          .header__text
+            | 500&nbsp;000
+          .header__descr
+            | Позиций под заказ
+    form.contactForm.form(name='Форма №1', method='post', action='./mail/mail.php', novalidate)
+      .row
+        .col-xs-12
+          .form__heading
+            | Введите номер телефона, мы обязательно Вам поможем!
+      .row
+        .col-xs-12.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0
+          .form-group.form__item
+            input.form-control.form__input.form__input--phone(name='phone', type='tel', data-validation-required-message='Введите корректные данные.', placeholder='+ 7 (900) 000-00-00', required)
+            p.help-block.text-danger
+            p.form__info
+              | Наш менеджер свяжется с Вами в течении 15-ти мин.
+        .col-xs-12.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0
+          .form-group.form__item
+            input.form-control.form__input.form__input--message(name='message', type='text', data-validation-required-message='Введите корректные данные.', placeholder='Какие детали Вам требуются?', required)
+            p.help-block.text-danger
+            p.form__info
+              | Мы подберем вам до 5ти вариантов различных производителей
+        .col-xs-12.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0
+          .form-group.form__item
+            input.form-control.form__input.form__input--name(name='name', type='text', data-validation-required-message='Введите корректные данные.', placeholder='Владимир', required)
+            p.help-block.text-danger
+            p.form__info
+              | Как к вам обращаться?
+        .clearfix
+        .col-xs-12
+          .success
+        .col-xs-12.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-4.text-center
+          button.btn.btn--form(type='submit', data-loading-text="Файл отправляется...") Узнать цену

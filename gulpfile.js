@@ -23,7 +23,8 @@ gulp.task('scripts', ['bower'], function() {
   return gulp.src([
       'bower_components/jquery/dist/jquery.js',
       'bower_components/slick-carousel/slick/slick.js',
-      'bower_components/bootstrap/dist/js/bootstrap.js'
+      'bower_components/bootstrap/dist/js/bootstrap.js',
+      'bower_components/jquery.maskedinput/dist/jquery.maskedinput.js'
     ])
   .pipe($.plumber())
   .pipe(gulp.dest('app/js'));

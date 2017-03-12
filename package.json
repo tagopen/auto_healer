@@ -32,6 +32,7 @@
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.0.3",
     "gulp-inject-string": "^1.1.0",
+    "gulp-inline-fonts": "^1.0.3",
     "gulp-javascript-obfuscator": "^1.1.2",
     "gulp-load-plugins": "^1.4.0",
     "gulp-plumber": "^1.1.0",

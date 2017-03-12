@@ -1,6 +1,777 @@
 +comment('general style')
+html
+  position: relative
+  min-height: 100%
+  height: 100%
+.body
+  position: relative
+  display: flex
+  flex-direction: column
+  min-height: 100%
+  padding-top: 175px
+  transition: .3s transform ease-out
+  &--collapsed
+    height: 100%
+    width: 100%
+    overflow: hidden
+    position: fixed
+    transform: translateX(-$collapse-width)
+.wrapper
+  flex: 1
+  flex: 1 0 auto
+  overflow: hidden
+.no-flexbox 
+  body
+    display: table
+    width: 100%
+  .wrapper
+    display: table-row
+    height: 100%
+button, a 
+  &:hover,
+  &:focus
+    outline: none
 +ic
 .text-danger
   color: #e74c3c
   text-align: left
+.heading
+  font: 400 50px/52px $font-bebas
+  color: $heading-color
+  text-align: center
+  &--main
+    font: 400 70px/72px $font-bebas
+    color: $main-heading-color
+  &--inverse
+    color: #fff
+.sub-heading
+  font: 400 30px/32px $main-font
+  color: $sub-heading-color
+  text-align: center
+  &--br
+    display: block
+.loaded
+  overflow: hidden
+button.close
+  z-index: 3
++rx(767)
+  .body
+    padding: 0
+  .heading
+    font: 400 36px/38px $font-bebas
+    &--main
+      font: 400 50px/52px $font-bebas
+  .sub-heading
+    font: 400 25px/28px $main-font
 +comment("home page style")
++comment('section navbar style')
+.navbar
+  background-color: #fff
+  width: 100%
+  text-align: center
+  transition: all .3s ease-out
+  &-toggle
+    margin: 15px
+    border-color: $main-bg
+    .icon-bar
+      background-color: $main-bg
+.nav
+  margin-bottom: 10px
+  border-bottom: 1px solid rgba(0,0,0,0.1)
+  width: 100%
+  transition: width .3s ease-out
+  z-index: 99
+  &__item
+    height: 100%
+    vertical-align: top
+    color: $navbar-item-color
+    &.active
+      background-color: $navbar-bg-hover
+      color: $navbar-item-color-hover
+  &__link
+    position: relative
+    display: table
+    height: 100%
+    width: 100%
+    font: 400 18px/22px $main-font
+    color: inherit
+    transition: all .3s ease-out
+    &:hover,
+    &:focus
+      color: $navbar-link-color-hover
+  &__text
+    display: table-cell
+    vertical-align: middle
+.affix-top
+  position: absolute
+.affix
+  position: fixed
+  padding: 15px 0
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.21)
+  .navbar-collapse
+    display: inline-block !important
+  .nav
+    margin: 10px 0 0
+  .info
+    display: none
+.logo
+  &__img
+    margin-top: 10px
+.info
+  float: right
+  padding: 20px 0 0
+  &__text
+    font: 400 18px/32px $main-font
+    color: $main-color
+    text-align: right
+.phone
+  margin-top: 10px
+  float: right
+  text-align: center
+  &__link
+    display: block
+    font: 700 22px/22px $main-font-bold
+    color: $main-color
+    &:hover,
+    &:focus
+      color: $main-color
+      text-decoration: none
+.btn--phone
+  margin-top: 15px
+  padding: 7px 29px
+  border-radius: 5px
+  background-color: $btn-default-bg
+  font: 400 20px/25px $main-font
+  color: $btn-default-color
+  transition: all .3s ease-out
+  &:hover,
+  &:focus
+    color: $btn-default-color
+    background-color: $btn-default-bg-hover
++rx(767)
+  .affix-top
+    position: static
+  .navbar
+    margin: 0
+    &-collapse
+      position: absolute
+      top: 64px
+      left: 0
+      right: 0
+      border-top: 1px solid $navbar-collapse-border
+      background: $navbar-collapse-bg
+      z-index: 100
+  .nav
+    margin: 0
+    bottom: 0 none
+  .logo
+    &__img
+      width: 100px
+      margin-left: 10px
+  .phone
+    margin-top: 20px
+    display: inline-block
+    float: none
+  .info
+    display: inline-block
+    float: none
++r(768)
+  .affix
+    .phone
+      display: none
+    .navbar-collapse
+      width: 72%
+  .info
+    padding: 0 20px
++r(992)
+  .info
+    padding: 0 50px
++r(1200)
+  .affix
+    .navbar-collapse
+      width: 62%
+    .phone
+      display: block
++comment('section header style')
+.header
+  padding: 64px 0
+  background: url(../img/header.jpg) no-repeat scroll 50% 50%
+  background-size: cover
+  &__sub-heading
+    margin-top: 40px
+  &__item
+    padding: 50px 0
+    text-align: center
+  &__text
+    font: 400 40px/45px $main-font-bold
+    color: $header-item-color
+  &__descr
+    font: 500 20px/25px $main-font-medium-italic
+    color: $header-item-color
+.form
+  padding: 30px 
+  background-color: rgba(0, 0, 0, 0.2)
+  border: 1px solid $form-border-color
+  &__heading
+    font: 400 30px/32px $main-font
+    color: $form-heading-color
+    text-align: center
+  &__input
+    margin: 20px 0 0
+    padding: 0 18px
+    background-color: $form-input-bg
+    border: 1px solid $form-input-border
+    height: 40px
+    box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.3)
+    border-radius: 0
+    font: 400 18px/30px $main-font
+    color: $form-input-color
+    +placeholder
+      color: $form-input-placeholder-color
+  &__info
+    padding: 15px 15px 10px
+    font: 400 16px/18px $main-font
+    color: $form-info-color
+    text-align: center
++rx(767)
+  .header
+    padding: 35px 0
+    &__sub-heading
+      margin-top: 20px
+    &__item
+      padding: 10px 0
+  .form
+    margin-top: 10p
+    padding: 15px
+    &__heading
+      margin-bottom: 10px
+      font: 400 20px/24px $main-font
+    &__item
+      margin: 0
+      padding: 10px 0
+    &__info
+      margin: 0
+    &__input
+      margin: 0
+
++comment('section product style')
+.product
+  padding: 35px 0
+  overflow: hidden
+  &__container
+    position: relative
+  &__item
+    padding: 35px 0
+    transition: all .3s ease-out
+    &:hover,
+    &:focus
+      box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.25)
+  &__img
+    margin: 0 auto
+  &__name
+    text-align: center
+  &__link
+    font: 400 18px/22px $main-font
+    color: $main-color
+    &:hover,
+    &:focus
+      color: $main-color
+  &__price
+    font: 500 20px/22px $main-font-medium
+    color: $product-price
+    text-align: center
+.ic
+  &--car-black
+    position: absolute
+    bottom: -35px
+    right: -196px
+    &:before
+      width: 686px
+      height: 274px
+      background: url(../img/car-black.png) no-repeat scroll 0 0
+.btn--form
+  width: 100%
+  background-color: $btn-form-bg
+  border-radius: 5px
+  font: 400 20px/25px $main-font
+  color: $btn-form-color
+  transition: all .3s ease-out
+  &:hover,
+  &:focus
+    background-color: $btn-form-bg-hover
+    color: $btn-form-color
++rx(767)
+  .product
+    &__item
+      padding: 20px 0
+  .ic
+    &--car-black
+      position: static
++r(768)
+  .btn
+    &--form
+      margin-top: 20px
++r(992)
+  .btn
+    &--form
+      margin-top: 0
++comment('section search style')
+.search
+  position: relative
+  padding: 50px 0
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.21)
+  &:before
+    content: ''
+    +coverdiv
+    background: url(../img/search.jpg) no-repeat
+    background-size: cover
+    opacity: .1
+  &__item
+    padding-top: 15px
+  &__label
+    font: 500 20px/22px $main-font-medium
+    color: $search-label-color
+  &__group
+    position: relative
+    margin-top: 10px
+    text-align: center
+  &__select
+    padding: 0 20px
+    width: 100%
+    height: 45px
+    background-color: $search-select-bg
+    border: 1px solid $search-select-border
+    box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.16)
+    font: 400 18px/30px $main-font
+    color: $search-select-color
+    appearance: none
+    &::-ms-expand
+      display: none
+    &:focus
+      outline: none
+  &__input
+    padding: 0 20px
+    width: 100%
+    height: 45px
+    background-color: $search-select-bg
+    border: 1px solid $search-select-border
+    font: 400 18px/30px $main-font
+    color: $search-select-color
+    box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.16)
+    +placeholder
+      color: $search-select-color
+  &__text
+    font: 400 18px/30px $main-font
+    color: $search-select-color
+.radio-group
+  display: inline-block
+  padding: 10px 14px
+  text-align: center
+  &__input
+    display: none
+  &__icon
+    position: relative
+    display: inline-block
+    width: 16px
+    height: 16px
+    background-color: #fff
+    border: 1px solid #cecece
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.16)
+    border-radius: 50%
+    cursor: pointer
+  &__text
+    display: block
+  &__input:checked + .radio-group__label .radio-group__icon:before
+    content: ''
+    position: absolute
+    display: block
+    margin: auto
+    width: 6px
+    height: 6px
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: #01b59a
+    border-radius: 50%
+.btn--search
+  margin-top: 30px
+  width: 100%
+  background-color: $main-bg
+  border-radius: 5px
+  font: 400 20px/24px $main-font
+  color: $btn-form-color
+  transition: all .3s ease-out
+  &:hover,
+  &:focus
+    color: $btn-form-color
+    background-color: $btn-form-bg-hover
++rx(767)
+  .search
+    padding: 22px 0
++r(992)
+  .search__group
+    text-align: left
++comment('section review style')
+.review
+  padding: 50px 0
+  &__container
+    position: relative
+  &__item
+    padding: 30px 0
+    text-align: center
+  &__img
+    margin: 0 auto
+  &__name
+    padding-top: 15px
+    font: 500 20px/22px $main-font-medium
+    color: $review-name-color
+  &__text
+    padding-top: 15px
+    font: 400 17px/19px $main-font
+    color: $review-text-color
+  &__link
+    padding-top: 15px
+    font: 500 17px/19px $main-font-medium
+    text-decoration: underline
+    color: $review-link-color
+    transition: all .3s ease-out
+    &:hover,
+    &:focus
+      color: $review-link-color-hover
+  &__player
+    margin-top: 12px
+.ic
+  &--review
+    position: absolute
+    bottom: -50px
+    left: -515px
+    margin: auto
+    &:before
+      width: 515px
+      height: 760px
+      background: url(../img/review.jpg) no-repeat scroll 0 0
+.audioplayer
+  background: $audioplayer-bg
+  border: 0 none
+  box-shadow: none
+  border-radius: 0
+  &-bar
+    left: 3em
+    right: 3em
+  &-time
+    display: none
+  &-volume
+    border: 0 none
+  &-bar-loaded
+    background-color: #8e8d8d
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.01) 0%, rgba(0, 0, 0, 0.01) 100%)
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 1px 4px rgba(0, 0, 0, 0.58)
+  &-bar-played
+    position: relative
+    background-color: #f5f8f9
+    background-image: linear-gradient(to top, #f5f8f9 0%, #fff 100%)
+    box-shadow: inset 0 1px 0 #fff
+    &:after
+      content: ''
+      position: absolute
+      display: block
+      width: 20px
+      height: 20px
+      top: -4px
+      right: -15px
+      background: #fff url(../img/icons/handle.png) no-repeat
+      border-radius: 50%
+  &-playpause
+    &:hover,
+    &:focus
+      background-color: $audioplayer-bg * .9
+  &-volume
+    &:hover,
+    &:focus
+      background-color: $audioplayer-bg * .9
+    &-adjust
+      background: $audioplayer-bg * .9
+      box-shadow: none
+      border-radius: 0
+      width: 2.5em
+  &:not(.audioplayer-playing) 
+    .audioplayer-playpause a
+      border-left-color: #8e8d8d
+.audioplayer-volume-button a
+  background: #8e8d8d
+  &:before
+    top: 2px
+    border-right-color: #8e8d8d
+.audioplayer-bar, .audioplayer-volume-adjust > div
+  background-color: #8e8d8d
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.01) 0%, rgba(0, 0, 0, 0.01) 100%)
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 1px 4px rgba(0, 0, 0, 0.58)
+.audioplayer-volume-adjust div div, .audioplayer-bar-played
+  background-color: #f5f8f9
+  background-image: linear-gradient(to top, #f5f8f9 0%, #fff 100%)
+  box-shadow: inset 0 1px 0 #fff
+.audioplayer-volume-adjust div div
+  &:after
+    content: ''
+    position: absolute
+    display: block
+    width: 20px
+    height: 20px
+    top: -10px
+    right: -3px
+    background: #fff url(../img/icons/handle.png) no-repeat
+    border-radius: 50%
+
+.audioplayer-playing 
+  .audioplayer-playpause 
+    a
+      &:before,
+      &:after
+        background-color: #8e8d8d
+        background-image: linear-gradient(to top, rgba(255, 255, 255, 0.01) 0%, rgba(0, 0, 0, 0.01) 100%)
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 1px 3px rgba(0, 0, 0, 0.45)
++rx(767)
+  .review
+    padding: 32px 0
+    &__item
+      padding: 15px 0
++comment('section team style')
+.team
+  padding: 50px 0
+  background-color: $team-bg
+.person
+  margin: 30px 0 10px
+  padding: 20px 5px 15px
+  background-color: $person-bg
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25)
+  text-align: center
+  &__img
+    margin: 0 auto
+  &__name
+    padding: 10px 0
+    font: 500 20px/22px $main-font-medium
+    color: $person-name-color
+  &__phone
+    color: inherit
+    text-decoration: none
+    &:hover,
+    &:focus
+      color: inherit
+      text-decoration: none
+      outline: none
+  &__position
+    font: 500 17px/19px $main-font-medium-italic
+    color: $person-position-color
+.notification
+  position: relative
+  padding: 22px 0 22px 78px
+  font: 500 20px/25px $main-font-medium
+  color: $notification-color
+  &:before
+    content: ''
+    position: absolute
+    display: block
+    width: 48px
+    height: 62px
+    left: 10px
+    top: -10px
+    background: url(../img/icons/arrow.png) no-repeat
+    background-size: contain
+  &__phone
+    font: 500 25px/30px $main-font-medium
+    color: $notification-phone-color
+    display: inline-block
+    &:hover,
+    &:focus
+      color: $notification-phone-color
+      text-decoration: none
++rx(767)
+  .team
+    padding: 32px 0
+  .notification
+    padding: 10px 0 10px 40px
+    font: 500 18px/22px $main-font-medium
+    &__phone
+      font: 500 20px/22px $main-font-medium
+    &:before
+      width: 24px
+      height: 31px
++r(768)
+  .slick-prev
+    left: -20px
+  .slick-next
+    right: -20px
++r(1200)
+  .review
+    &__photo
+      height: 110px
+      overflow: hidden
+  .slick-prev
+    left: -30px
+  .slick-next
+    right: -30px
++comment('section benefit style')
+.benefit
+  &__item
+    padding: 24px 0
+    text-align: center
+  &__photo
+    position: relative
+    margin: 0 auto
+    width: 115px
+    height: 115px
+    border-radius: 50%
+    box-shadow: 0 0 0 3px $benefit-border-color
+  &__icon
+    +ica
+  &__name
+    margin-top: 10px
+    padding: 7px 0 8px
+    font: 500 24px/26px $main-font-medium
+    color: $benefit-name-color
+  &__descr
+    padding: 7px 0 8px
+    font: 400 18px/22px $main-font
+    color: $benefit-descr-color
+.ic
+  &--benefit1
+    &:before
+      width: 54px
+      height: 42px
+      background: url(../img/icons/benefit1.png) no-repeat
+  &--benefit2
+    &:before
+      width: 44px
+      height: 53px
+      background: url(../img/icons/benefit2.png) no-repeat
+  &--benefit3
+    &:before
+      width: 44px
+      height: 54px
+      background: url(../img/icons/benefit3.png) no-repeat
+  &--benefit4
+    &:before
+      width: 54px
+      height: 53px
+      background: url(../img/icons/benefit4.png) no-repeat
+  &--benefit5
+    &:before
+      width: 55px
+      height: 54px
+      background: url(../img/icons/benefit5.png) no-repeat
+  &--benefit6
+    &:before
+      width: 53px
+      height: 54px
+      background: url(../img/icons/benefit6.png) no-repeat
++rx(767)
+  .benefit
+    padding: 32px 0
+    &__box
+      border: 0 none
+    &__item
+      padding: 15px 0
++r(768)
+  .benefit
+    padding: 50px 0
+    &__box
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3)
+        border-bottom: 1px solid rgba(0,0,1,.1)
++comment('section question style')
+.question
+  position: relative
+  padding: 32px 0 153px
+  background: url(../img/question.jpg) no-repeat scroll 50% 50%
+  &:after
+    content: ''
+    +coverdiv
+    background-color: #000
+    opacity: .5
+  &__container
+    position: relative
+    z-index: 1
+.form--question
+  margin: 30px 0
+.ic
+  &--car-red
+    position: absolute
+    &:before
+      width: 413px * 0.8
+      height: 277px * 0.8
+      background: url(../img/car-red.png) no-repeat scroll 0 0
+      background-size: contain
++rx(767)
+  .ic
+    &--car-red
+      right: 0
+      bottom: -180px
+      &:before
++r(768)
+  .question
+    padding: 50px 0 150px
+  .ic
+    &--car-red
+      bottom: -176px
+      right: -124px
+      &:before
+        width: 413px
+        height: 277px
++r(992)
+  .question
+    padding: 50px 0
+  .ic
+    &--car-red
+      right: -40px
+      bottom: -73px
++r(1200)
+  .ic
+    &--car-red
+      right: 28px
++comment('section footer style')
+.footer
+  padding: 38px 0 24px
+  text-align: center
++rx(767)
+  .footer  
+    &__img
+      margin: 0 auto
+      width: auto
+  .logo
+    &--footer
+      margin-top: 15px
++r(768)
+  .logo
+    &--footer
+      float: left
+  .info
+    &--footer
+      padding: 20px 0 0
++r(992)
+  .info
+    &--footer
+      padding: 0 10px
++r(1200)
+  .info
+    &--footer
+      padding: 0 40px
+
++comment('section modal style')
+//.modal:before
+//    display: inline-block
+//    vertical-align: middle
+//    content: " "
+//    height: 100%
+button.modal
+  &__close
+    padding: 10px 15px
+    font-size: 30px
+    transition: all .3s ease-out
+.form
+  &--modal
+    background: transparent
+  &__heading  
+    &--inverse
+      color: #000

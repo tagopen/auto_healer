@@ -52,8 +52,6 @@ html(lang='ru' prefix='og: http://ogp.me/ns#')
     // Bootstrap CSS
     link(rel='stylesheet' href='css/fonts.css')
     link(rel='stylesheet' href='css/bootstrap.css')
-    // Font-Awesome CSS
-    link(rel='stylesheet' href='css/font-awesome.css')
     block styles
     // Custom CSS 
     link(rel='stylesheet' href='css/style.css')
@@ -67,11 +65,12 @@ html(lang='ru' prefix='og: http://ogp.me/ns#')
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-  body.body
+  body#page-top.body.loaded
     div.wrapper
       block content
-    footer.footer
       block footer
+      block modals
+    include _loaded.pug
 
     // build:js js/bundle.min.js
 
@@ -84,6 +83,9 @@ html(lang='ru' prefix='og: http://ogp.me/ns#')
     // Old browsers reject JavaScript
     script(src='js/jquery.reject.js')
     block scripts
+    // Bootstrap validation JavaScript
+    script(src='js/jqBootstrapValidation.js')
+    script(src='js/contact_me.js')
     // Slick-Slider JavaScript
     script(src='js/slick.js')
     // Custom JavaScript

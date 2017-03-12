@@ -1,0 +1,160 @@
+section#search.search
+  .container
+    .row
+      .col-xs-12
+        h2.heading Поиск запчастей в 3 шага
+    form.contactForm(name='Поиск запчастей в 3 шага', method='post', action='./mail/mail.php', novalidate)
+      .row
+        .col-xs-12.col-sm-6
+          .search__item
+            .search__label
+              | Марка:
+            .search__group
+              //-i.search__select-expand
+              input.search__input(name='car_mark', type='text', placeholder='Введите марку автомобиля')
+        .col-xs-12.col-sm-6
+          .search__item
+            .search__label
+              | Модель: 
+            .search__group
+              //-i.search__select-expand
+              input.search__input(name='car_model', type='text', placeholder='Введите модель автомобиля')
+        .col-xs-12.col-sm-6
+          .search__item
+            .search__label
+              | Поколение:
+            .search__group
+              //-i.search__select-expand
+              input.search__input(name='car_generation', type='text', placeholder='Введите поколение автомобиля')
+        .col-xs-12.col-sm-6
+          .search__item
+            .search__label
+              | Серия:
+            .search__group
+              //-i.search__select-expand
+              input.search__input(name='car_serie', type='text', placeholder='Введите серию автомобиля')
+        .col-xs-12.col-sm-6
+          .search__item
+            .search__label
+              | Модификация:
+            .search__group
+              //-i.search__select-expand
+              input.search__input(name='car_modification', type='text', placeholder='Введите модификацию автомобиля')
+        .col-xs-12.col-sm-6
+          .search__item
+            .search__label
+              | Запчасть
+            .search__group
+              input.search__input(name='spare_part', type='text', placeholder='Введите искомую деталь')
+        .col-xs-12
+          .search__item
+            .search__label
+              | Расположение детали
+            .row
+              .col-xs-12.col-sm-6.col-md-4
+                .search__group
+                  .radio-group
+                    input#rbtn1.radio-group__input(type='radio', name='position1')
+                    label.radio-group__label(for='rbtn1') 
+                      i.radio-group__icon
+                      span.radio-group__text 
+                        |левое
+                  .radio-group
+                    input#rbtn2.radio-group__input(type='radio', name='position1')
+                    label.radio-group__label(for='rbtn2') 
+                      i.radio-group__icon
+                      span.radio-group__text 
+                        |правое
+                  .radio-group
+                    input#rbtn3.radio-group__input(type='radio', name='position1', checked)
+                    label.radio-group__label(for='rbtn3') 
+                      i.radio-group__icon
+                      span.radio-group__text 
+                        |любое
+              .col-xs-12.col-sm-6.col-md-4
+                .search__group
+                  .radio-group
+                    input#rbtn4.radio-group__input(type='radio', name='position2')
+                    label.radio-group__label(for='rbtn4')
+                      i.radio-group__icon
+                      span.radio-group__text 
+                        | левое
+                  .radio-group
+                    input#rbtn5.radio-group__input(type='radio', name='position2')
+                    label.radio-group__label(for='rbtn5') 
+                      i.radio-group__icon
+                      span.radio-group__text 
+                        |правое
+                  .radio-group
+                    input#rbtn6.radio-group__input(type='radio', name='position2', checked)
+                    label.radio-group__label(for='rbtn6') 
+                      i.radio-group__icon
+                      span.radio-group__text 
+                        |любое
+              .col-xs-12.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-0
+                .search__group
+                  .radio-group
+                    input#rbtn7.radio-group__input(type='radio', name='position3')
+                    label.radio-group__label(for='rbtn7') 
+                      i.radio-group__icon
+                      span.radio-group__text 
+                        |левое
+                  .radio-group
+                    input#rbtn8.radio-group__input(type='radio', name='position3')
+                    label.radio-group__label(for='rbtn8') 
+                      i.radio-group__icon
+                      span.radio-group__text 
+                        |правое
+                  .radio-group
+                    input#rbtn9.radio-group__input(type='radio', name='position3', checked)
+                    label.radio-group__label(for='rbtn9') 
+                      i.radio-group__icon
+                      span.radio-group__text 
+                        |любое
+        .col-xs-12.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+          button.btn.search__btn.btn--search(data-target="#spoiler-1") Выполнить шаг 1
+        #spoiler-1.collapse
+          .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3
+            .search__item
+              .search__label
+                | Положение руля
+              .row
+                .col-xs-12
+                  .search__group
+                    .radio-group
+                      input#rbtn10.radio-group__input(type='radio', name='position4')
+                      label.radio-group__label(for='rbtn10') 
+                        i.radio-group__icon
+                        span.radio-group__text 
+                          |левое
+                    .radio-group
+                      input#rbtn11.radio-group__input(type='radio', name='position4', checked)
+                      label.radio-group__label(for='rbtn11') 
+                        i.radio-group__icon
+                        span.radio-group__text 
+                          |правое
+              .search__text
+                | Для точного подбора запчасти, сообщите нам пожалуйста следующие данные:
+              .search__group
+                input.search__input(name='car_vin', type='text', placeholder='GDLJMJGBDKJDFJUF')
+          .col-xs-12.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+            button.btn.search__btn.btn--search(data-target='#spoiler-2') Выполнить шаг 2
+        #spoiler-2.collapse
+          .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3
+            .search__item
+              .row
+                .col-xs-12
+                  .search__text
+                    | Оставьте ваш телефонный номер, мы подберем вам от 3х до 10ти аналогов.
+                  .form-group.search__group
+                    input.form-control.search__input(name='phone', type='tel', data-validation-required-message='Введите корректные данные.', placeholder='Введите ваш телефон', required)
+                    p.help-block.text-danger
+          .clearfix
+          .col-xs-12
+            .success
+          .col-xs-12.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+            button.btn.search__btn.btn--search(type='submit', data-loading-text="Файл отправляется...") Выполнить шаг 3
+
+
+
+

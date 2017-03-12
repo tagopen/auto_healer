@@ -1,10 +1,33 @@
 extends base/_layout.pug
 
 block styles
+  // Audio Player CSS
+  link(rel='stylesheet' href='css/audioplayer.css')
 
 block scripts
+  // Audio Player JavaScript
+  script(src='js/audioplayer.js')
+  // Phone masked input JavaScript
+  script(src='js/jquery.maskedinput.js')
+  // Yandex Map JavaScript
+  script(type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=mbTZzWB-YXOWCXqkjeDRWTmDHzlCkjBm&width=100%&height=450&id=map&scroll=false")
+
 
 block content
-    include components/_nav.pug
-    
+  include components/_nav.pug
+  include partials/_header.pug
+  include partials/_product.pug
+  include partials/_search.pug
+  include partials/_review.pug
+  include partials/_team.pug
+  include partials/_benefit.pug
+  section.map
+    .container-fluid
+      .row
+        #map
+  include partials/_question.pug
 block footer
+  include partials/_footer.pug
+block modals
+  include partials/_modals.pug
+
