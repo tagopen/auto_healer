@@ -222,7 +222,7 @@ gulp.task('dev', ['clean', 'pug', 'fonts', 'img', 'sass', 'scripts'], function()
     }))
     .pipe($.useref({searchPath: 'app/'}))
     //.pipe($.selectors.run())
-    .pipe($.if('*.js', $.uglifyjs()))
+    .pipe($.if('*.js', $.javascriptObfuscator()))
     .pipe($.if('*.css', $.cssnano({
             discardComments: {removeAll: true}
         })
