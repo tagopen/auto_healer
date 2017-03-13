@@ -1,0 +1,25 @@
+extends base/_layout.pug
+
+block variables
+  - var title = 'Ваша заявка принята'
+
+block styles
+
+block scripts
+
+block content
+  .thanks
+    section.question.question--full-size
+      .container.question__container.question__container--v-center.row
+        .col-xs-12.col-md-8.col-lg-9
+          div.form.form--question
+            .row
+              .col-xs-12
+                h1.heading.heading--inverse &#10003; Ваша заявка принята
+                .form__heading.
+                  Мы свяжемся с вами в ближайшее время
+            .row
+              .clearfix
+              .col-sm-6.col-sm-offset-3.text-center
+                a.btn.btn--form(href='index.html') &#8592; Вернуться на сайт
+        i.ic.ic--car-red
