@@ -71,12 +71,12 @@
   });
 
   // Closes the Responsive Menu on Menu Item Click
-  $('.navbar-collapse ul li a').click(function(){ 
+  $('.navbar-collapse ul li a').on('click', function(){ 
     $('.navbar-toggle:visible').click();
   });
 
   // Highlight the top nav as scrolling occurs
-  if(!($('.navbar-toggle').is(':visible'))) {
+  if( $( window ).width() >= 768 ) {
     $('body').scrollspy({
       target: '.affix',
       offset: 100
@@ -87,16 +87,18 @@
       offset: {
         top: 200
       }
-    })
+    });
   }
 
   // Masked phone
-  $(function($){
+  if ($("[name=phone]").length) {
     $("[name=phone]").mask("+ 7 (999) 999-99-99");
-  });
-
+  }
+  
   // Audio player
-  //$('audio').audioPlayer();
+  if($('audio').length) {
+    $('audio').audioPlayer();
+  }
 
   // Play audio
   $('.review__link').on('click', function(e) {
@@ -113,7 +115,7 @@
     $spoiler.addClass('in')
     e.preventDefault();
   });
-
+  
   // Init slick slider
   $('#carousel').slick({
     slidesToShow: 4,
