@@ -15,7 +15,6 @@ html
     width: 100%
     overflow: hidden
     position: fixed
-    transform: translateX(-$collapse-width)
 .wrapper
   flex: 1
   flex: 1 0 auto
@@ -92,6 +91,9 @@ button.close
     &.active
       background-color: $navbar-bg-hover
       color: $navbar-item-color-hover
+      &:hover,
+      &:focus
+        color: $navbar-item-color-hover
   &__link
     position: relative
     display: table
@@ -108,16 +110,6 @@ button.close
     vertical-align: middle
 .affix-top
   position: absolute
-.affix
-  position: fixed
-  padding: 15px 0
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.21)
-  .navbar-collapse
-    display: inline-block !important
-  .nav
-    margin: 10px 0 0
-  .info
-    display: none
 .logo
   &__img
     margin-top: 10px
@@ -181,10 +173,18 @@ button.close
     float: none
 +r(768)
   .affix
+    position: fixed
+    padding: 15px 0
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.21)
     .phone
       display: none
     .navbar-collapse
+      display: inline-block !important
       width: 72%
+    .nav
+      margin: 10px 0 0
+    .info
+      display: none
   .info
     padding: 0 20px
 +r(992)
@@ -245,7 +245,7 @@ button.close
     &__item
       padding: 10px 0
   .form
-    margin-top: 10p
+    margin-top: 10px
     padding: 15px
     &__heading
       margin-bottom: 10px
@@ -318,7 +318,7 @@ button.close
 +r(992)
   .btn
     &--form
-      margin-top: 0
+      margin-top: 10px
 +comment('section search style')
 .search
   position: relative
@@ -762,7 +762,7 @@ button.close
     &--footer
       padding: 0 40px
 
-+comment('section modal style')
++comment('section modals style')
 //.modal:before
 //    display: inline-block
 //    vertical-align: middle
@@ -779,3 +779,4 @@ button.modal
   &__heading  
     &--inverse
       color: #000
+
