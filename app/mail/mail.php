@@ -50,13 +50,19 @@
   }
 
   if (!empty($_POST["carMark"])) {
-    $post['car__mark'] = filter_input(INPUT_POST,'carMark', FILTER_SANITIZE_STRING);
-    $body .= 'Марка автомобиля: ' . $post['car__mark'] . chr(10) . chr(13);
+    $post['car_mark'] = filter_input(INPUT_POST,'carMark', FILTER_SANITIZE_STRING);
+    $body .= 'Марка автомобиля: ' . $post['car_mark'] . chr(10) . chr(13);
   }
 
+  if (!empty($_POST["carModel"])) {
+    $post['car_model'] = filter_input(INPUT_POST,'carModel', FILTER_SANITIZE_STRING);
+    $body .= 'Модель автомобиля: ' . $post['car_model'] . chr(10) . chr(13);
+  }
+
+
   if (!empty($_POST["carGeneration"])) {
-    $post['car__generation'] = filter_input(INPUT_POST,'carGeneration', FILTER_SANITIZE_STRING);
-    $body .= 'Поколение автомобиля: ' . $post['car__generation'] . chr(10) . chr(13);
+    $post['car_generation'] = filter_input(INPUT_POST,'carGeneration', FILTER_SANITIZE_STRING);
+    $body .= 'Поколение автомобиля: ' . $post['car_generation'] . chr(10) . chr(13);
   }
 
   if (!empty($_POST["carSerie"])) {
@@ -65,18 +71,13 @@
   }
 
   if (!empty($_POST["carModification"])) {
-    $post['car__modification'] = filter_input(INPUT_POST,'carModification', FILTER_SANITIZE_STRING);
-    $body .= 'Модификация автомобиля: ' . $post['car__modification'] . chr(10) . chr(13);
-  }
-
-  if (!empty($_POST["carSerie"])) {
-    $post['car__serie'] = filter_input(INPUT_POST,'carSerie', FILTER_SANITIZE_STRING);
-    $body .= 'Серия автомобиля: ' . $post['car__serie'] . chr(10) . chr(13);
+    $post['car_modification'] = filter_input(INPUT_POST,'carModification', FILTER_SANITIZE_STRING);
+    $body .= 'Модификация автомобиля: ' . $post['car_modification'] . chr(10) . chr(13);
   }
 
   if (!empty($_POST["sparePart"])) {
-    $post['spare__part'] = filter_input(INPUT_POST,'sparePart', FILTER_SANITIZE_STRING);
-    $body .= 'Искомая деталь: ' . $post['spare__part'] . chr(10) . chr(13);
+    $post['spare_part'] = filter_input(INPUT_POST,'sparePart', FILTER_SANITIZE_STRING);
+    $body .= 'Запчасть: ' . $post['spare_part'] . chr(10) . chr(13);
   }
 
   if (!empty($_POST["position1"])) {
@@ -96,7 +97,7 @@
 
   if (!empty($_POST["position4"])) {
     $post['position_4'] = filter_input(INPUT_POST,'position4', FILTER_SANITIZE_STRING);
-    $body .= 'Расположение детали №4: ' . $post['position_4'] . chr(10) . chr(13);
+    $body .= 'Положение руля: ' . $post['position_4'] . chr(10) . chr(13);
   }
 
   if (!empty($_POST["carVin"])) {
@@ -109,12 +110,10 @@
 
   $mail->CharSet      = 'UTF-8';
 
-  $mail->IsSendmail();
-
   $from = 'Авто Лекарь';
   $to = "valeronmedwed@yandex.ru";
-  $mail->SetFrom($from, HOST_NAME);
-  $mail->AddAddress($to);
+  $mail->SetFrom($from, 'no-repeat@' . HOST_NAME);
+  $mail->AddAddress($to, 'Админ');
 
   $mail->isHTML(false);
 
