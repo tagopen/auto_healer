@@ -21,7 +21,6 @@
     "slick-carousel": "^1.6.0",
     "bootstrap": "^3.3.7",
     "bootstrap-carousel-swipe": "*",
-    "jquery.maskedinput": "^1.4.1",
-    "jquery-ui": "^1.12.1"
+    "jquery.maskedinput": "^1.4.1"
   }
 }
