@@ -401,10 +401,7 @@ html {
     height: 100%;
     width: 100%;
     overflow: hidden;
-    position: fixed;
-    -webkit-transform: translateX(-200px);
-        -ms-transform: translateX(-200px);
-            transform: translateX(-200px); }
+    position: fixed; }
 
 .wrapper {
   -webkit-box-flex: 1;
@@ -510,6 +507,8 @@ button.close {
     .nav__item.active {
       background-color: #01cdae;
       color: #fff; }
+      .nav__item.active:hover, .nav__item.active:focus {
+        color: #fff; }
   .nav__link {
     position: relative;
     display: table;
@@ -527,18 +526,6 @@ button.close {
 
 .affix-top {
   position: absolute; }
-
-.affix {
-  position: fixed;
-  padding: 15px 0;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.21);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.21); }
-  .affix .navbar-collapse {
-    display: inline-block !important; }
-  .affix .nav {
-    margin: 10px 0 0; }
-  .affix .info {
-    display: none; }
 
 .logo__img {
   margin-top: 10px; }
@@ -605,10 +592,20 @@ button.close {
     float: none; } }
 
 @media only screen and (min-width: 768px) {
-  .affix .phone {
-    display: none; }
-  .affix .navbar-collapse {
-    width: 72%; }
+  .affix {
+    position: fixed;
+    padding: 15px 0;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.21);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.21); }
+    .affix .phone {
+      display: none; }
+    .affix .navbar-collapse {
+      display: inline-block !important;
+      width: 72%; }
+    .affix .nav {
+      margin: 10px 0 0; }
+    .affix .info {
+      display: none; }
   .info {
     padding: 0 20px; } }
 
@@ -683,7 +680,7 @@ button.close {
     .header__item {
       padding: 10px 0; }
   .form {
-    margin-top: 10p;
+    margin-top: 10px;
     padding: 15px; }
     .form__heading {
       margin-bottom: 10px;
@@ -759,7 +756,7 @@ button.close {
 
 @media only screen and (min-width: 992px) {
   .btn--form {
-    margin-top: 0; } }
+    margin-top: 10px; } }
 
 /* ------------------------------------------ */
 /* S E C T I O N    S E A R C H    S T Y L E  */
@@ -1274,9 +1271,9 @@ button.close {
   .info--footer {
     padding: 0 40px; } }
 
-/* ---------------------------------------- */
-/* S E C T I O N    M O D A L    S T Y L E  */
-/* ---------------------------------------- */
+/* ------------------------------------------ */
+/* S E C T I O N    M O D A L S    S T Y L E  */
+/* ------------------------------------------ */
 button.modal__close {
   padding: 10px 15px;
   font-size: 30px;
@@ -1288,3 +1285,25 @@ button.modal__close {
 
 .form__heading--inverse {
   color: #000; }
+
+/* ---------------------------------------- */
+/* S U C C E S S    P A G E    S T Y L E    */
+/* ---------------------------------------- */
+.thanks {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.question--full-size {
+  height: 100%;
+  overflow: hidden; }
+
+.question__container--v-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
