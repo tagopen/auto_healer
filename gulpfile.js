@@ -193,7 +193,7 @@ gulp.task('build', ['clean', 'pug', 'img', 'scripts', 'sass'], function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('dev', ['clean', 'pug', 'fonts', 'img', 'sass', 'scripts'], function() {
+gulp.task('dev', ['clean', 'pug', 'fonts', 'sass', 'scripts'], function() {
 
   //var buildCss = gulp.src(['app/css/**/*.css'])  
   //  .pipe($.plumber())
