@@ -30,22 +30,22 @@ $(function() {
                 url: "././mail/mail.php",
                 type: "POST",
                 data: {
-                    form: form,
-                    name: name,
-                    phone: phone,
-                    email: email,  
-                    message: message,
-                    carMark: carMark,
-                    carModel: carModel,
-                    carGeneration: carGeneration,
-                    carSerie: carSerie,
-                    carModification: carModification,
-                    sparePart: sparePart,
-                    position1: position1,
-                    position2: position2,
-                    position3: position3,
-                    position4: position4,
-                    carVin: carVin
+                    form: $.trim(form),
+                    name: $.trim(name),
+                    phone: $.trim(phone),
+                    email: $.trim(email),  
+                    message: $.trim(message),
+                    carMark: $.trim(carMark),
+                    carModel: $.trim(carModel),
+                    carGeneration: $.trim(carGeneration),
+                    carSerie: $.trim(carSerie),
+                    carModification: $.trim(carModification),
+                    sparePart: $.trim(sparePart),
+                    position1: $.trim(position1),
+                    position2: $.trim(position2),
+                    position3: $.trim(position3),
+                    position4: $.trim(position4),
+                    carVin: $.trim(carVin)
                 },
                 cache: false,
                 success: function() {
@@ -63,6 +63,8 @@ $(function() {
 
                     //clear all fields
                     $form.trigger("reset");
+
+                    document.location.href="./success.html";
                 },
                 error: function() {
                     // Fail message
