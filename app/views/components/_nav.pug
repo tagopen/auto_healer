@@ -3,12 +3,8 @@ nav.navbar.navbar-fixed-top.affix-top
     // Collect the nav links, forms, and other content for toggling
     div.collapse.navbar-collapse.navbar-ex1-collapse
       ul.nav.nav-justified
-        li.nav__item: a.nav__link.page-scroll(href='#page-top'): span.nav__text Главная
-        li.nav__item: a.nav__link.page-scroll(href='#product'): span.nav__text Цены
-        li.nav__item: a.nav__link.page-scroll(href='#search'): span.nav__text Города доставки
-        li.nav__item: a.nav__link.page-scroll(href='#review'): span.nav__text Отзывы
-        li.nav__item: a.nav__link.page-scroll(href='#team'): span.nav__text Наша команда
-        li.nav__item: a.nav__link.page-scroll(href='#footer'): span.nav__text Наши контакты
+        each navbar in navbars
+          li.nav__item: a.nav__link.page-scroll(href=navbar.link): span.nav__text= navbar.name
     //Brand and toggle get grouped for better mobile display
     div.navbar-header
       button.navbar-toggle(type='button' data-toggle='collapse' data-target='.navbar-ex1-collapse')
@@ -19,7 +15,7 @@ nav.navbar.navbar-fixed-top.affix-top
       a.logo(href='/')
         img.img-responsive.logo__img(src='img/logo/logo.png' alt='Авто Лекарь')
     .hidden-xs.phone
-      a.phone__link(href='tel:+79780794857') +7&nbsp;(978)&nbsp;079-48-57
+      a.phone__link(href='tel:+79780794857') +7 (978) 079-48-57
       button.btn.btn--phone(data-toggle="modal", data-target="#callback", data-backdrop="static") Мы перезвоним
     .hidden-xs.info
       .info__text

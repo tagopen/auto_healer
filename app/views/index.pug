@@ -1,5 +1,7 @@
 extends base/_layout.pug
 
+block variables
+
 block styles
   // Audio Player CSS
   link(rel='stylesheet' href='css/audioplayer.css')
@@ -11,7 +13,6 @@ block scripts
   script(src='js/jquery.maskedinput.js')
   // Yandex Map JavaScript
   script(type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=mbTZzWB-YXOWCXqkjeDRWTmDHzlCkjBm&width=100%&height=450&id=map&scroll=false")
-
 
 block content
   include components/_nav.pug

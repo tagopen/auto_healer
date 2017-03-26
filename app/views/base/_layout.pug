@@ -1,4 +1,5 @@
 include ../utils/_variables.pug
+block variables
 doctype html
 html(lang='ru' prefix='og: http://ogp.me/ns#')
   head
@@ -6,13 +7,12 @@ html(lang='ru' prefix='og: http://ogp.me/ns#')
     meta(http-equiv='Content-Type' content='text/html; charset=utf-8')/
 
     // Meta SEO - Description, Keywords, Title
-    meta(name='title' content='')/
+    meta(name='title' content='Низкие цены на Автозапчасти')/
     meta(name='description' content='')/
     meta(name='keywords' content='')/
 
     // Multilanguage localization
     link(rel='alternate' href='/' hreflang='x-default')/
-    link(rel='alternate' href='/en/' hreflang='en')/
     link(rel='alternate' href='/ru/' hreflang='ru')/
     
     // Mobile viewport optimization
@@ -30,22 +30,21 @@ html(lang='ru' prefix='og: http://ogp.me/ns#')
     meta(name='format-detection' content='address=no')/
 
     // Microformats Open Graph
-    meta(property='og:title' content='My Site')/
-    meta(property='og:site_name' content='My Site')/
-    meta(property='og:description' content='My Site is cool')/
+    meta(property='og:title' content='Авто Лекарь - низкие цены на Автозапчасти')/
+    meta(property='og:site_name' content='Авто Лекарь')/
+    meta(property='og:description' content='Бесплатная доставка по Крыму! Оплата наложенным платежом, при получении')/
     meta(property='og:type' content='website')/
     meta(property='og:locale' content='ru_RU')/
-    meta(property='og:locale:alternate' content='en_US')/
-    meta(property='og:image' content='img/logo/microformat.png')/
-    meta(property='og:image:type' content='image/png')/
-    meta(property='og:url' content='http://url.com')/
+    meta(property='og:image' content='http://autoleckar.ru/img/logo/microformat.jpg')/
+    meta(property='og:image:type' content='image/jpeg')/
+    meta(property='og:url' content='http://autoleckar.ru')/
 
     // Microformats Twitter Cards
     meta(name='twitter:card' content='summary')/
     meta(name='twitter:site' content='@flickr')/
-    meta(name='twitter:title' content='My Site')/
-    meta(name='twitter:description' content='My Site is cool')/
-    meta(name='twitter:image' content='img/logo/microformat.png')/
+    meta(name='twitter:title' content='Авто Лекарь - низкие цены на Автозапчасти')/
+    meta(name='twitter:description' content='Бесплатная доставка по Крыму! Оплата наложенным платежом, при получении')/
+    meta(name='twitter:image' content='http://autoleckar.ru/img/logo/microformat.jpg')/
     
     // build:css css/bundle.min.css
 
